@@ -51,3 +51,20 @@ VALUES (NULL, 'CLS', 'Mercedes Benz', '2017', '1', 'Lujo en todos los niveles', 
 
 INSERT INTO `autos`.`inventario` (`auto_id`, `nombre_auto`, `marca_auto`, `modelo`, `km_auto`, `descripcion_auto`, `precio`)
 VALUES (NULL, 'Serie 5', 'BMW', '2017', '1', 'Gran auto a un gran precio', '75000');
+
+-- Obteniendo datos de la base de datos
+SELECT * FROM inventario WHERE auto_id = 3;
+SELECT * FROM inventario WHERE marca_auto = "Chevrolet";
+
+-- Actualizando datos de nuestra base de datos
+UPDATE inventario SET km_auto = 155 WHERE auto_id = 3;
+UPDATE inventario SET precio = 20000 WHERE auto_id = 1;
+UPDATE inventario SET descripcion_auto = "Este es un muy buen auto para ti. " WHERE auto_id = 3;
+
+--Eliminando un documento o fila desde la base de datos 
+DELETE FROM inventario WHERE auto_id = 12;
+
+-- Obteniendo informacion, ordenarlos y limitarlos
+SELECT * FROM `inventario` ORDER BY marca_auto ASC; --Ascendente
+SELECT * FROM `inventario` ORDER BY marca_auto DESC; --Descendente
+SELECT * FROM `inventario` ORDER BY marca_auto ASC LIMIT 6; --Limite de 6
