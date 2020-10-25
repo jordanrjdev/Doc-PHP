@@ -68,3 +68,23 @@ DELETE FROM inventario WHERE auto_id = 12;
 SELECT * FROM `inventario` ORDER BY marca_auto ASC; --Ascendente
 SELECT * FROM `inventario` ORDER BY marca_auto DESC; --Descendente
 SELECT * FROM `inventario` ORDER BY marca_auto ASC LIMIT 6; --Limite de 6
+
+--Contando registros desde la base de datos
+SELECT marca_auto, COUNT(*) FROM inventario GROUP BY marca_auto;
+SELECT modelo, COUNT(*) FROM inventario GROUP BY modelo;
+
+-- Operadores en mysql 
+SELECT marca_auto, nombre_auto, modelo FROM inventario WHERE modelo >= 2016;
+SELECT marca_auto, nombre_auto, modelo FROM inventario WHERE modelo <= 2016;
+SELECT marca_auto, nombre_auto, modelo, precio FROM inventario WHERE precio <= 10000;
+SELECT * FROM inventario WHERE modelo BETWEEN 2014 AND 2015;
+SELECT * FROM inventario WHERE marca_auto="BMW" OR marca_auto="Mercedes Benz";
+
+-- Concatenando consultas 
+SELECT CONCAT(nombre_auto, " ", marca_auto, " ", precio) FROM inventario WHERE auto_id = 2;
+SELECT CONCAT_WS(" ", nombre_auto, marca_auto, precio) FROM inventario WHERE auto_id = 2;
+
+-- Operaciones de numeros en SQL 
+SELECT AVG(precio) FROM inventario WHERE marca_auto="Chevrolet"; --promedio
+SELECT * FROM inventario WHERE precio = (SELECT MIN(precio) FROM inventario); --minimo 
+SELECT * FROM inventario WHERE precio = (SELECT MAX(precio) FROM inventario); --maximo
