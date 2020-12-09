@@ -42,7 +42,8 @@
     public function actualizar($registro){
       $conexion = parent::connectDB();
       try {
-        
+        $query = "UPDATE $this->tabla SET precio=:precio, descripcion_auto=:descripcion_auto, nombre_auto=:nombre_auto WHERE auto_id=:auto_id";
+        $actualizacion = $conexion->prepare($query)->execute($registro);
       } catch (Exception $error) {
         echo "Error {$error->getMessage()}";
       }

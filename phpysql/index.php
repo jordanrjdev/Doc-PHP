@@ -17,13 +17,20 @@
     require_once "autosmodelo.php";
     $autos = new Autosmodelo();
 
+    // $auto = [
+    //   "auto_id" => "19",
+    //   "nombre_auto" => "Emotion",
+    //   "marca_auto" => "Chevrolet", 
+    //   "modelo" => 2010,
+    //   "km_auto" => 10000, 
+    //   "precio" => 20000,
+    //   "descripcion_auto" => "Este es un muy buen auto para pasear junto con tus seres queridos"
+    // ];
     $auto = [
+      "auto_id" => "19",
       "nombre_auto" => "Emotion",
-      "marca_auto" => "Chevrolet", 
-      "modelo" => 2010,
-      "km_auto" => 10000, 
-      "precio" => 15005,
-      "descripcion_auto" => "Este es un muy buen auto para pasear xd"
+      "precio" => 20000,
+      "descripcion_auto" => "Este es un muy buen auto para pasear junto con tus seres queridos"
     ];
   ?>
   <pre>
@@ -40,6 +47,8 @@
       echo "<p>Descripcion : {$coche["descripcion_auto"]}</p>";
       echo "<hr>";
     }
+
+    // $autos->actualizar($auto);
 
     ?>
   </pre>
